@@ -6,9 +6,9 @@ app = Flask("KAHOOT")
 def index():
     return render_template("index.html")
 
-@app.route("/about_us")
-def about_us():
-    return render_template("about_us.html")
+@app.route("/about_school")
+def about_school():
+    return render_template("about_school.html")
 
 
 app.run()

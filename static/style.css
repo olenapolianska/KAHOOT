@@ -1,6 +1,26 @@
 body {
-    background: red;
+    background: AliceBlue;
     }
-green{
-   background: green;
+.green{
+   background: Lavender;
+
     }
+h1 {
+   color: purple;
+   }
+.main {
+   color: Indigo;
+   font-family: Monospace;
+   font-size: 15px;}
+
+h2 {
+   color: #570095;
+   font-family: Monospace;
+   }
+ul {
+   color: #8c66c8;
+
+}
+p {
+   color: #8c66c8;
+   }
