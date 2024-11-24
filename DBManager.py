@@ -19,6 +19,7 @@ class DBManager:
         cursor.execute("""
         CREATE TABLE IF NOT EXISTS Options (
             id INT PRIMARY KEY,
+            question_id INT,
             content TEXT,
             is_correct BOOLEAN);
         """)
@@ -39,7 +40,7 @@ class DBManager:
 
     def add_option(self, id, content, is_correct):
         cursor = self.connection.cursor()
-        cursor.execute(f"INSERT INTO Options(id, content, is_correct) VALUES (?, ?, ?)", [id, content, is_correct])
+        cursor.execute(f"INSERT INTO Options(id, question_id, content, is_correct) VALUES (?, ?, ?)", [id, content, is_correct])
         self.connection.commit()
         cursor.close()
 
@@ -59,9 +60,9 @@ class DBManager:
         return res
 
 
-    def get_options(self):
+    def get_options(self, question_id):
         cursor = self.connection.cursor()
-        cursor.execute("SELECT * FROM Options")
+        cursor.execute("SELECT * FROM Options WHERE question_id = ?", [question_id])
         res = cursor.fetchall()
         cursor.close()
         return res
