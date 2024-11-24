@@ -37,6 +37,13 @@ class DBManager:
         cursor.close()
 
 
+    def add_option(self, id, content, is_correct):
+        cursor = self.connection.cursor()
+        cursor.execute(f"INSERT INTO Options(id, content, is_correct) VALUES (?, ?, ?)", [id, content, is_correct])
+        self.connection.commit()
+        cursor.close()
+
+
     def get_quizzes(self):
         cursor = self.connection.cursor()
         cursor.execute("SELECT * FROM Quiz")
@@ -52,7 +59,12 @@ class DBManager:
         return res
 
 
-
+    def get_options(self):
+        cursor = self.connection.cursor()
+        cursor.execute("SELECT * FROM Options")
+        res = cursor.fetchall()
+        cursor.close()
+        return res
 
 
 
