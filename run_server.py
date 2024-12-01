@@ -36,4 +36,4 @@ def about_school():
     return render_template("about_school.html")
 
 
-app.run(port=6666)
+app.run()
