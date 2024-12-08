@@ -45,6 +45,7 @@ def answer_func(quiz_id):
 
 @app.route("/quiz/<int:quiz_id>/result")
 def result(quiz_id):
+
     return "РЕЗУЛЬТАТ"
 
 app.run()

@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p > tff  </p>
+
 
 {% for quiz in quizzes %}
+<div class="container p-5 my-5 border">
     <h2>{{ quiz[1] }}</h2>
     <p>{{ quiz[2] }}</p>
     <a href="/quiz/{{quiz[0]}}">Перейти</a>
+</div>
 {% endfor %}
 {% endblock %}
 
