@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p class="h2"> Запитання  </p>
-<p class="h4">{{question[2]}}</p>
+<h3 class="text-muted"> Запитання:  </h3>
+<h4 class="text-dark">{{question[2]}}</h4>
 <form method="post" action="{{url_for('answer_func', quiz_id=quiz_id)}}">
     {% for option in options %}
     <div class="container p-5 my-5 border">
@@ -11,7 +11,7 @@
     </div>
     {% endfor %}
 
-    <button type="submit">Відповісти</button>
+    <button type="submit" class="btn btn-outline-secondary">Відповісти</button>
 </form>
 
 
